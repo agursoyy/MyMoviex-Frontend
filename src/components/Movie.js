@@ -46,7 +46,7 @@ class Movie extends React.Component {
     getTrailerID() {  /* if exists, get trailer published in Turkish. Otherwise, get in any language. */
         var movieID = this.props.data.id;
         var apiKey = "f9261403d3de49a0151e3debf139d4b6"
-        let trailersUrl = `http://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${apiKey}&language=tr`
+        let trailersUrl = `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${apiKey}&language=tr`
        return Axios.get(trailersUrl).then(response => 
             {
                 var videoIDs = response.data.results
@@ -55,7 +55,7 @@ class Movie extends React.Component {
                     this.setState({trailerID: videoIDs[0].key})
                 }
                 else {
-                    trailersUrl = `http://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${apiKey}`;
+                    trailersUrl = `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${apiKey}`;
                     Axios.get(trailersUrl).then(response => 
                         {
                             videoIDs = response.data.results;
