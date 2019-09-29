@@ -25,6 +25,7 @@ class Login extends React.Component {
     }
     componentDidMount() {
         this.nameAutoFocus = false;
+        console.log(process.env.REACT_APP_LOGIN_URI);
         this.redirect(); // if user has been authenticated.
     }
     handleInputChange(event) {
