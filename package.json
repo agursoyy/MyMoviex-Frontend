@@ -2,6 +2,10 @@
   "name": "mymovie",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.9.0",
+    "node": "10.16.0"
+  },
   "dependencies": {
     "@loadable/component": "^5.10.2",
     "axios": "^0.19.0",
