@@ -1,0 +1,46 @@
+import React from 'react'
+import '../styles/movie.css'
+import {withRouter} from 'react-router-dom'
+class Movie extends React.Component {
+    constructor(props) {
+        super(props)
+        this.imgUrl = "https://image.tmdb.org/t/p/w300/"
+        this.handleMovieDetailButton = this.handleMovieDetailButton.bind(this)
+    }
+    moviePoster() {
+        var img;
+        if(this.props.data.poster_path == null)
+            img = <img src={require('../assets/notFoundPoster.png')} className="movie-posterNotFound-img" alt="poster"/>
+        else
+            img = <img src={this.imgUrl + this.props.data.poster_path} onLoad="" className="movie-img" alt="poster"/>
+        return img
+    }
+    handleMovieDetailButton (event) {
+        var movie = this.props.data
+        var movieName = movie.title
+        var movieID = movie.id
+        var path = `/${this.removeSpaces(movieName)}-filmi`
+        var search = `?id=${movieID}`
+        this.props.history.push({pathname: path,search: search})
+    }
+    removeSpaces(str) {
+        return str.replace(/\s/g, '-')
+    }
+    render() {
+        let img = this.moviePoster()
+        return (
+        <div className="movie">
+            <div className="movie-wrapper">
+                {img}
+               <div className="movie-rollover">
+                   <div className="movie-rollover-rating"><i className="fa fa-star" aria-hidden="true"> {this.props.data.vote_average}</i></div>
+                    <button className="movie-rollover-btn btn btn-outline-light" onClick= {this.handleMovieDetailButton}>Ýncele</button>
+               </div>
+            </div>
+            <div className="movie-title">{this.props.data.title}</div>
+        </div>
+            
+        )
+    }
+}
+export default withRouter(Movie)

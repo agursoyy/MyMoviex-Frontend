@@ -1,0 +1,11 @@
+.ali .alp {
+    border:1px solid red;
+    background-color:yellow;
+    color: #fff;
+}
+.notFoundContainer {
+    color: red;
+}
+.myClassName {
+    border: 3px solid red;
+}

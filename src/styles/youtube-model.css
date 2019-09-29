@@ -1,0 +1,10 @@
+.modal-video-inner {
+    padding-top: 60px;  /* exclude the height of navbar.*/
+   }
+   .modal-video-close-btn {
+     top: -25px !important;
+     right: -25px !important;
+     width: 25px !important;
+     height: 25px !important;     
+     outline: none !important;
+   }

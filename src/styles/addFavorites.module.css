@@ -1,0 +1,15 @@
+.spinnerLoading {
+    color: #fff;
+}
+.favButton {
+    cursor: pointer;
+    color: #fff;
+}
+.favButton:hover {
+    cursor: pointer;
+    color: #ce2424;
+}
+.unfavButton {
+    cursor: pointer;
+    color: #ce2424;
+}

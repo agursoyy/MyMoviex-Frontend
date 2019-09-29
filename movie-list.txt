@@ -1,0 +1,90 @@
+import React from 'react'
+import '../styles/movielist.css'
+import Axios from 'axios'
+import Loading from './Loading'
+import Movie from './Movie'
+import Pagination from "react-js-pagination"
+import {withGetScreen} from 'react-getscreen'
+
+ class MovieList extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state= {movies: null,currentPage: this.props.match.params.page, loading: true,activePage: 1}
+        this.totalPages = null
+        this.handlePageChange = this.handlePageChange.bind(this)
+    }
+    componentDidMount() {
+        this.obtainPageDate()
+    } 
+    componentDidUpdate(prevProps) {
+        if(prevProps.match.params.page !== this.props.match.params.page) {
+            this.obtainPageDate()
+        }
+    } 
+    async obtainPageDate() {
+        await this.fetchMovies(this.props.math.params.page);
+        new Promise((resolve, reject) => {
+            this.setState({currentPage: this.props.match.params.page,loading: true})
+            this.fetchMovies(this.props.match.params.page)
+            resolve(null)
+          }).then(() => {
+            setTimeout(() => {
+                this.setState({loading:false})
+            }, 1000);
+          })
+    }
+    fetchMovies(page) {
+        Axios.get(this.props.fetchUrl +"&page=" +page)
+        .then(response=>{
+            this.setState({movies: response.data.results})
+            this.totalPages = response.data.total_pages
+            //console.log(this.state.movies)
+            console.log('page:' +this.totalPages)
+         }).catch(error => {
+            console.log(error);
+          });
+    }
+   /* handleClick(data) {
+        let page = data.selected + 1
+        this.props.history.push(page.toString())
+    } */
+    
+    handlePageChange(pageNumber) {
+    var currentUrl = this.props.location.pathname
+    var arr = currentUrl.split('/')
+    var url = `/${arr[1]}/${pageNumber.toString()}`
+    this.props.history.push(url)
+  }
+    render() {
+        console.log(this.props)
+        if(this.state.loading || this.state.movies == null) {
+            return(
+                <Loading/>
+            )
+        }
+        else {
+        let movieList = this.state.movies.map((m,index)=><div key={index} className="col-lg-3 col-md-4 col-6 mb-4"><Movie data={m}/></div>)
+        return(
+            <div className="movielist-page">
+                <div className="movieList-container container">
+                    <h3 className="page-title">{this.props.pageTitle}</h3>
+                    <div className="row">
+                            {movieList}
+                    </div>
+                    <div className="pagination mt-3">
+                        <Pagination
+                        hideDisabled
+                        activePage={this.state.currentPage}
+                        itemsCountPerPage={20}
+                        totalItemsCount={20*this.totalPages}
+                        pageRangeDisplayed={this.props.isMobile() ? 3 : (this.props.isTablet() ? 5 : 10)}
+                        onChange={this.handlePageChange}
+                        />
+                    </div>
+                </div>
+            </div>
+           )
+        }
+    }
+}
+export default withGetScreen(MovieList)

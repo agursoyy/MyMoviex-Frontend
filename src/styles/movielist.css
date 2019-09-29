@@ -1,0 +1,54 @@
+.movielist-page {
+    background-color: #fff;
+}
+
+.movielist-page .movieList-container {
+    min-height: calc(100vh - 56px);
+    padding: 20px 30px;
+}
+.movielist-page .movieList-container .page-title {
+    margin-bottom: 30px;
+    color: #000;
+    font-family: 'Arimo', sans-serif;
+    font-weight: 600;
+}
+.movielist-page .movieList-container .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 26px 0;
+}
+ul.pagination {
+    height: 35px;
+    display: inline-block;
+}
+ul.pagination li {
+    display: inline-block;
+    margin-right: 5px;
+}
+ul.pagination .active{
+    color: red !important;
+    font-size: 30px !important;
+}
+ul.pagination li a{
+    font-size: 1em;
+    font-weight: 600;
+    font-weight: bold;
+    margin:0 4px;
+    color: #000;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    .movielist-page .movieList-container .pagination {
+        padding: 10px;
+    }
+    ul.pagination li {
+        margin-right: 6px;
+    }
+    ul.pagination li a{
+        font-size: 11px;
+    }
+  
+}

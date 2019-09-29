@@ -1,0 +1,10 @@
+.playLink {
+    cursor: pointer;
+    color: #fff;
+}
+.playLink:hover {
+    color: #ce2424;
+} 
+.modal-video {
+    background-color: red !important;
+}

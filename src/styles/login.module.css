@@ -1,0 +1,95 @@
+.authContainer {
+    min-height: calc(100vh - 56px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: 
+    radial-gradient(circle, transparent 40%, var(--color-v) 80%),
+    linear-gradient(to right, var(--color), var(--color)),
+    var(--image);
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: 
+    var(--blend-top, normal),
+    var(--blend-bottom, saturation),
+    normal;
+  --image: url('../assets/login-bg.jpg');
+  
+  --color-v: #081116;
+  --color: rgb(102, 5, 5); 
+  
+  flex: 1;
+  width: 100vw; 
+}
+
+.card {
+    border: none !important;
+}
+
+.heading {
+    text-align: center;
+    color: #fff;
+    background: #343a40 !important;
+}
+.form {
+    padding: 40px;
+    background-color: #2d3338;
+    color: #fff;
+}
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 20px;
+}
+.formGroup {
+    position: relative;
+    margin-bottom: 26px !important;
+}
+
+.inputText {
+    height: 60px !important; 
+    background-color: #343a40 !important;
+    padding-left: 20px !important; 
+    padding-top: 25px !important;
+    color: #fff !important;
+    border-color: #444444 !important;	
+}
+.placeholder {
+    pointer-events: none;
+    color: #8c8c8c;
+    font-size: 16px;
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    transition: all 0.2s;
+}
+.inputText:focus {
+    border: none !important;
+    box-shadow: inset 0 2.2px 1.2px#E87C03 !important;
+
+}
+.inputText:focus ~ .placeholder,
+.inputText:not(:placeholder-shown) ~ .placeholder
+{   top: 6px;
+    padding-bottom: 25px;
+    font-size: 11.5px;
+}
+
+.formCheckBoxContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.formError {
+    font-size: 11px;
+    color: #E87C03;
+}
+.authFailedMessage {
+    margin-top: 10px;
+    color: #E87C03;;
+    font-size: 15px;
+}
