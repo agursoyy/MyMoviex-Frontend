@@ -6,7 +6,6 @@ import Loading from './Loading'
 import AddFavorites from './AddFavorites'
 import ModalVideo from 'react-modal-video'
 import YoutubePlay from './YoutubePlay';
-import { throwStatement } from '@babel/types'
 
 class movieDetail extends React.Component {
     constructor(props) {
@@ -18,6 +17,7 @@ class movieDetail extends React.Component {
         this.backdropImg = ''
     }
     componentDidMount() {
+        console.log(this.props);
         new Promise((resolve,reject) => {
             this.fetchMovie()
             resolve()
@@ -115,7 +115,7 @@ class movieDetail extends React.Component {
                     <Loading />
                 </div>
                 <div id="moviedetail-page">
-                    <div id="moviedetail" className="container" style={{ backgroundImage: `url(${this.backdropUrl+this.state.movie.backdrop_path})`}}>
+                    <div id="moviedetail" className="container" style={{ backgroundImage: this.state.movie.backdrop_path ? `url(${this.backdropUrl+this.state.movie.backdrop_path})` : ''}}>
                                 <div className="row content">
                                     <div className="col-md-3 d-none d-md-block imgContainer">
                                         {img}

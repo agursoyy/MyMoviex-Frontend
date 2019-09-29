@@ -14,6 +14,7 @@ class Movie extends React.Component {
         this.handleMovieDetailButton = this.handleMovieDetailButton.bind(this)
         this.handleImageLoaded = this.handleImageLoaded.bind(this);
     }
+    com
     moviePoster() {
         var img;
         if(this.props.data.poster_path == null)

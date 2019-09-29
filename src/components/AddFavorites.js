@@ -12,6 +12,7 @@ class AddFavorites extends React.Component {
         this.removeFromFavorites = this.removeFromFavorites.bind(this);
     }
     componentDidMount() {
+        console.log(this.props.movie.title);
         this.isFavorite();  // check if it's already added to favorites.
     }
     addFavorites() {
@@ -56,7 +57,8 @@ class AddFavorites extends React.Component {
                 this.setState({isFavorite: false,loading: false});
                 console.log(response);
             }).then(() => {
-                this.props.refreshMovieList();
+                if(this.props.refreshMovieList)
+                    this.props.refreshMovieList();
             })
             .catch( err => {
                 console.error(err)
@@ -65,9 +67,8 @@ class AddFavorites extends React.Component {
         }
     }
     isFavorite() {
-        console.log(this.context.session.auth);
+        console.log('ALL');
         if(this.context.session.auth) {
-            let movieId = this.props.movie.id;
             Axios.get(process.env.REACT_APP_FAVORITE_IDS_URI ,{
                 method: 'GET',
                 headers: {
@@ -75,9 +76,12 @@ class AddFavorites extends React.Component {
                 }
             })
             .then(response => {
+                const movieId = this.props.movie.id;
                 const favorites = response.data.results;
+                
                 for(var i = 0; i < favorites.length; i++) {
                     if(favorites[i] === movieId){
+                        console.log('FAVORITE' + this.props.movie.title);
                         this.setState({isFavorite: true});
                         break;
                     }

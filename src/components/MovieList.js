@@ -87,7 +87,7 @@ class MovieList extends React.Component {
     render() {
      
             let movieList = this.state.movies.map((m,index)=><div key={index} className="col-lg-3 col-md-4 col-6 mb-4">
-               <Suspense fallback={<div>Loading...</div>}><Movie refreshMovieList={() => {this.refreshMovieList()}} data={m}/></Suspense>
+               <Suspense fallback={<div>Loading...</div>}><Movie refreshMovieList={this.refreshMovieList.bind(this)} data={m}/></Suspense>
                 </div>)
             return(
                 <>
