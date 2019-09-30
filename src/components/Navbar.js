@@ -14,7 +14,7 @@ class Navbar extends React.Component {
         this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
     }
     componentDidMount() {
-        $('.navbar-collapse .navbar-nav .nav-item a').on('click', function () {
+        $('.navbar-collapse .navbar-nav .nav-item .nav-link:not(.dropdown-toggle)').on('click', function () {
              $('.navbar-toggler').click() //bootstrap 3.x  
         });    
     }
