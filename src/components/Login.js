@@ -24,6 +24,7 @@ class Login extends React.Component {
         this.handleElementValidation = this.handleElementValidation.bind(this);
     }
     componentDidMount() {
+        console.log('LOGIN');
         this.nameAutoFocus = false;
         this.redirect(); // if user has been authenticated.
     }

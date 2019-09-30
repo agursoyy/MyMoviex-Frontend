@@ -90,7 +90,6 @@ class NavbarUserLink extends React.Component {
     }
     render() {
         const loginStatus = this.context.session.auth; // if session.auth === true or defined , this means user has logged in.
-        console.log(loginStatus);
         if(!loginStatus) {
             return (
                 <AuthenticationLinks/>
