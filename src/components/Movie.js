@@ -77,7 +77,9 @@ class Movie extends React.Component {
             this.getTrailerID();
             resolve();
         }).then(()=> {
-            this.setState({youtube: true});
+            setTimeout(()=> {
+                this.setState({youtube: true});
+            },500)  // getTrailerID has inner loops and setState methods, it can take much time.
         });
     }
     currentPage() {

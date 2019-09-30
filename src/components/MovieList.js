@@ -68,8 +68,9 @@ class MovieList extends React.Component {
     }
     refreshMovieList() {
         if(this.props.localServer) {
-            this.setState({loading: true});
-            this.fetchMovies();
+            /*this.setState({loading: true});
+            this.fetchMovies();*/
+            window.location.reload(); // more logical solution will be thought.
         }
     }
     handlePageChange(pageNumber) {

@@ -104,7 +104,9 @@ class movieDetail extends React.Component {
         }
     }
     handleYoutubeButton() {
-        this.setState({youtube: true})
+        setTimeout(()=> {
+            this.setState({youtube: true})
+        },400);
     }
     
     render() {
