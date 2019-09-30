@@ -31,7 +31,7 @@ ul.pagination .active{
     font-size: 30px !important;
 }
 ul.pagination li a{
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 600;
     font-weight: bold;
     margin:0 4px;
@@ -43,12 +43,15 @@ ul.pagination li a{
 @media (max-width: 768px) {
     .movielist-page .movieList-container .pagination {
         padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
     ul.pagination li {
         margin-right: 6px;
     }
     ul.pagination li a{
-        font-size: 12px;
+        font-size: 1.1em;
     }
   
 }

@@ -107,7 +107,7 @@ class MovieList extends React.Component {
                             activePage={this.state.currentPage}
                             itemsCountPerPage={20}
                             totalItemsCount={20*this.totalPages}
-                            pageRangeDisplayed={this.props.isMobile() ? 3 : (this.props.isTablet() ? 5 : 10)}
+                            pageRangeDisplayed={this.props.isMobile() ? 3 : (this.props.isTablet() ? 5 : 12)}
                             onChange={this.handlePageChange}
                             />
                         </div>
