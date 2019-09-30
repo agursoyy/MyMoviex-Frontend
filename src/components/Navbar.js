@@ -17,6 +17,9 @@ class Navbar extends React.Component {
         $('.navbar-collapse .navbar-nav .nav-item .nav-link:not(.dropdown-toggle)').on('click', function () {
              $('.navbar-toggler').click() //bootstrap 3.x  
         });    
+        $('.navbar-collapse .navbarUserLink .dropdown .dropdown-menu .dropdown-item').on('click', function () {
+            $('.navbar-toggler').click() //bootstrap 3.x  
+       });  
     }
     handleSearchValue(event) {
         this.setState({searchValue: event.target.value})
