@@ -51,4 +51,7 @@
         -moz-transition: left 0.4s ease-in;
         transition: left 0.4s ease-in;
     }
+    #search-movie-input {
+        margin-top: 10px;
+    }
 }
