@@ -170,9 +170,9 @@ class Signup extends React.Component {
                 <div className={`container-fluid ${styles.authContainer} `}>
                     <div className = {`row ${styles.formContainer}`}>
                         <div className={`col-md-4 offset-md-4`}>
-                            <div className={`card ${styles.card}`}>
-                                <div className={`card-header ${styles.heading}`}>
-                                <h6>Kaydol</h6>
+                            <div className={`${styles.card}`}>
+                                <div className={`${styles.heading}`}>
+                                    KAYIT OL
                                 </div>
                                 <div className={` ${styles.form}`}>
                                     <form>

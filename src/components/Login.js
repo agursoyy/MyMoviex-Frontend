@@ -152,11 +152,11 @@ class Login extends React.Component {
                 <div className={`container-fluid ${styles.authContainer} `}>
                     <div className = {`row`}>
                         <div className={`col-md-4 offset-md-4`}>
-                            <div className={`card ${styles.card}`}>
-                                <div className={`card-header ${styles.heading}`}>
-                                <h6>GİRİŞ YAP</h6>
+                            <div className={`${styles.card}`}>
+                                <div className={`${styles.heading}`}>
+                                    GİRİŞ YAP
                                 </div>
-                                <div className={` ${styles.form}`}>
+                                <div className={`${styles.form}`}>
                                     <form>
                                         <div className={`form-group ${styles.formGroup}`}>
                                             <input type="email" name='email' value= {this.state.email} onChange= {this.handleInputChange} onBlur= {this.handleElementValidation} className={`form-control ${styles.inputText}`} id="loginEmail" aria-describedby="emailHelp" placeholder=' '/>

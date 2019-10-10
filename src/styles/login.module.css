@@ -28,13 +28,22 @@
 }
 
 .heading {
-    text-align: center;
+    background: rgba(52, 58, 64,0.98);
     color: #fff;
-    background: #343a40 !important;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+}
+@media(max-width: 768px) {
+    .heading {
+        font-weight: 400;
+        font-size: 14px;
+    }
 }
 .form {
     padding: 40px;
-    background-color: #2d3338;
+    background-color: rgb(45, 51, 56,0.95) !important;
     color: #fff;
 }
 .buttonContainer {
