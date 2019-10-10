@@ -1,6 +1,6 @@
 #moviedetail-page {
-    min-height: calc(100vh - 56px);
    /* background: linear-gradient(to bottom right, #804040, #2a2122); */
+   min-height: calc(100vh - 56px);
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -24,7 +24,7 @@
     background: linear-gradient(180deg,rgba(13, 63, 63, 0.72), #0f0716);
 
 }
-#movidetail .row.content {
+#movidetail .content {
     z-index: 1;
 }
 #moviedetail .moviedetail-poster {
@@ -67,10 +67,17 @@
     margin-top: 60px;
     overflow: auto;
 }
-#moviedetail .movie-info .button-groups {
+#moviedetail .movie-info .button-groups i{
     margin: 10px 0;
     font-size: 30px;
 }
+#moviedetail .movie-info .button-groups .make-comment{
+    color: #fff;
+   cursor: pointer;
+}
+#moviedetail .movie-info .button-groups .make-comment i.comment-icon:hover{
+    color: red;
+ }
 
 
 @media only screen and (max-width: 600px) {
@@ -83,7 +90,14 @@
     #moviedetail .overview {
         font-size: 12px;
     }
-    #moviedetail .movie-info .button-groups {
+    #moviedetail .movie-info .button-groups i{
         font-size: 26px;
+    }
+    #comment-container .post-comment .comment-input {
+        min-height: 40px;
+    }
+    #comment-container .post-comment .avatar {
+        height: 50px;
+        width: 50px;
     }
   }

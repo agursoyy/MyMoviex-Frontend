@@ -6,15 +6,17 @@ import Loading from './Loading'
 import AddFavorites from './AddFavorites'
 import ModalVideo from 'react-modal-video'
 import YoutubePlay from './YoutubePlay';
+import MovieComments from './MovieComments';
 
 class movieDetail extends React.Component {
     constructor(props) {
         super(props)
-        this.state= {loading: true,movie: {}, youtube: false, trailerID: ''}
+        this.state= {loading: true,movie: {}, youtube: false, trailerID: '',showComments: false,}
         this.apiKey = "f9261403d3de49a0151e3debf139d4b6"
         this.imgUrl = "https://image.tmdb.org/t/p/w300/"
         this.backdropUrl = "https://image.tmdb.org/t/p/original/"
         this.backdropImg = ''
+        this.handleCommentButton = this.handleCommentButton.bind(this);
     }
     componentDidMount() {
         console.log(this.props);
@@ -108,6 +110,9 @@ class movieDetail extends React.Component {
             this.setState({youtube: true})
         },400);
     }
+    handleCommentButton() {
+        this.setState({showComments: true});
+    }
     
     render() {
         let img = this.moviePoster()
@@ -130,10 +135,10 @@ class movieDetail extends React.Component {
                                             {this.genresJsx()}
                                             <div className="button-groups d-flex">
                                                 <div className="mr-2"><AddFavorites movie = {this.state.movie}/></div>
-                                                <div><YoutubePlay onClick = {this.handleYoutubeButton.bind(this)}/>
-
-                                                </div>
-
+                                                <div className="mr-2"><YoutubePlay onClick = {this.handleYoutubeButton.bind(this)}/></div>
+                                                <a className="make-comment" href="#movie-comments2">
+                                                    <i className="far fa-comment comment-icon"></i>
+                                                </a>
                                             </div>
                                             <hr/>
 
@@ -145,13 +150,20 @@ class movieDetail extends React.Component {
                                                 <li>
                                                     <span className="release-date">{this.state.movie.release_date}</span>
                                                 </li>
+
                                             </ul>
                                             <p className="overview">
                                             <b>Özet: </b>{this.state.movie.overview}
                                             </p>
                                     </div> 
+                                   <div className="col-12 d-none d-md-block" id="movie-comments2">
+                                        <MovieComments/>
+                                   </div>
                                 </div>
                     </div>  
+                    <div className="col-12 p-0 d-md-none" id="movie-comments">
+                        <MovieComments bgColor={true}/>
+                    </div>
                     <ModalVideo channel='youtube' isOpen={this.state.youtube} videoId={this.state.trailerID} onClose={() => this.setState({youtube: false})} />
                 </div>
             </>

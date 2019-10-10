@@ -1,0 +1,62 @@
+.commentContainer {
+        padding-top: 100px;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        padding-bottom: 30px;
+}
+.bgColor {
+    background: linear-gradient(180deg,rgba(13, 63, 63, 0.72), #0f0716);
+}
+.postTitle {
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 10px;
+    margin-bottom: 40px;
+    border-left: 6px solid red;
+}
+.avatar {
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.commentBox {
+    display: flex;
+}
+
+.formGroup {
+    width: 100% !important;
+}
+.commentInput {
+    margin-bottom: 3px;
+}
+.commentInput:focus {
+    box-shadow: 0 0 0 .2rem rgba(194, 91, 125, 0.5) !important;
+}
+.postCommentBtn {
+    background-color: rgb(10, 10, 10) !important;
+    color: #fff !important;
+    border-radius: 2px;
+    padding: 6px;
+}
+.postCommentBtn:focus {
+    box-shadow: 0 0 0 .12rem rgba(194, 91, 125, 0.5) !important;
+}
+.postedTitle {
+    border-left: 6px solid #E87C03;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 767px) {
+    .postTitle {
+        font-size: 12px;
+    }
+    .avatar {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+    }
+    .commentContainer {
+        padding: 30px 10px !important;
+    }
+}
