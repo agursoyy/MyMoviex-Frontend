@@ -1,11 +1,5 @@
 .commentContainer {
-        padding-top: 100px;
-        padding-left: 30px !important;
-        padding-right: 30px !important;
-        padding-bottom: 30px;
-}
-.bgColor {
-    background: linear-gradient(180deg,rgba(13, 63, 63, 0.72), #0f0716);
+    padding:0 50px !important;
 }
 .postTitle {
     color: #fff;
@@ -35,7 +29,8 @@
     box-shadow: 0 0 0 .2rem rgba(194, 91, 125, 0.5) !important;
 }
 .postCommentBtn {
-    background-color: rgb(10, 10, 10) !important;
+    background: linear-gradient(180deg,rgba(13, 63, 63, 0.9), #000000);
+    box-shadow: 0 0 0 .05rem rgba(194, 91, 125, 0.5) !important;
     color: #fff !important;
     border-radius: 2px;
     padding: 6px;
@@ -57,6 +52,6 @@
         margin-right: 8px;
     }
     .commentContainer {
-        padding: 30px 10px !important;
+        padding: 0 10px !important;
     }
 }

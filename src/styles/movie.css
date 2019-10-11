@@ -4,9 +4,6 @@
     z-index: 0;
     overflow: hidden; /* [1.2] Hide the overflowing of child elements */
 }
-.movie-img-container {
-    cursor: pointer;
-}
 .movie-posterNotFound-img {
     width: 100%;
     height: 300px;

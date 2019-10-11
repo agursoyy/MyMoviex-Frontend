@@ -136,7 +136,7 @@ class movieDetail extends React.Component {
                                             <div className="button-groups d-flex">
                                                 <div className="mr-2"><AddFavorites movie = {this.state.movie}/></div>
                                                 <div className="mr-2"><YoutubePlay onClick = {this.handleYoutubeButton.bind(this)}/></div>
-                                                <a className="make-comment" href="#movie-comments2">
+                                                <a className="make-comment" href="#movie-comments">
                                                     <i className="far fa-comment comment-icon"></i>
                                                 </a>
                                             </div>
@@ -156,14 +156,11 @@ class movieDetail extends React.Component {
                                             <b>Özet: </b>{this.state.movie.overview}
                                             </p>
                                     </div> 
-                                   <div className="col-12 d-none d-md-block" id="movie-comments2">
+                                   <div className="col-12" id="movie-comments">
                                         <MovieComments/>
                                    </div>
                                 </div>
-                    </div>  
-                    <div className="col-12 p-0 d-md-none" id="movie-comments">
-                        <MovieComments bgColor={true}/>
-                    </div>
+                    </div> 
                     <ModalVideo channel='youtube' isOpen={this.state.youtube} videoId={this.state.trailerID} onClose={() => this.setState({youtube: false})} />
                 </div>
             </>

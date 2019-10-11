@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/movie.css'
 import {withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Axios from 'axios';
 import AddFavorites from './AddFavorites';
 import YoutubePlay from './YoutubePlay';
@@ -90,9 +91,10 @@ class Movie extends React.Component {
         return (
         <div className="movie">
             <div className="movie-wrapper">
-                    <div className="movie-img-container" onClick={this.handleMovieDetailButton}>
+                 
+                    <Link to={`/${this.removeSpaces(this.props.data.title)}-filmi/${this.props.data.id}`} className="movie-img-container">
                         {img}
-                    </div>
+                    </Link>
                     <div className="movie-related-links">
                         <AddFavorites movie = {this.props.data} refreshMovieList = {this.props.refreshMovieList} next = {this.currentPage()}/>
                         <YoutubePlay onClick = {()=>{this.handleYoutubeButton()}}/>

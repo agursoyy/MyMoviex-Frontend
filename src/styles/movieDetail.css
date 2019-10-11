@@ -1,14 +1,14 @@
 #moviedetail-page {
    /* background: linear-gradient(to bottom right, #804040, #2a2122); */
    min-height: calc(100vh - 56px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
+
+    background-color: #000;
 }
 #moviedetail{
     position: relative;
-    background-size: 100% 100%;
-    background-position: center; 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top; 
     background-repeat: no-repeat;
     box-shadow: 3px 3px 30px #0D0D0D;
 }
@@ -21,7 +21,8 @@
     top: 0;
     z-index: 0;
     /*background: rgba(13, 63, 63, 0.75) 100%;*/
-    background: linear-gradient(180deg,rgba(13, 63, 63, 0.72), #0f0716);
+    /*background: linear-gradient(180deg,rgba(13, 63, 63, 0.72), #0f0817);*/
+    background: linear-gradient(180deg,rgba(13, 63, 63, 0.72), #18151b);
 
 }
 #movidetail .content {
@@ -66,6 +67,9 @@
     font-size: 16px;
     margin-top: 60px;
     overflow: auto;
+    background: linear-gradient(180deg,rgba(13, 63, 63, 0.2), rgb(24, 21, 27,0.2));
+
+
 }
 #moviedetail .movie-info .button-groups i{
     margin: 10px 0;
@@ -78,7 +82,9 @@
 #moviedetail .movie-info .button-groups .make-comment i.comment-icon:hover{
     color: red;
  }
-
+#movie-comments {
+    margin-top: 10%;
+}
 
 @media only screen and (max-width: 600px) {
     #moviedetail {
@@ -100,4 +106,5 @@
         height: 50px;
         width: 50px;
     }
+   
   }
