@@ -1,5 +1,7 @@
 .commentContainer {
-    padding:0 50px !important;
+    padding:50px !important;
+    background: rgba(0,0,0,.5)
+
 }
 .postTitle {
     color: #fff;
@@ -30,7 +32,7 @@
 }
 .postCommentBtn {
     background: linear-gradient(180deg,rgba(13, 63, 63, 0.9), #000000);
-    box-shadow: 0 0 0 .05rem rgba(194, 91, 125, 0.5) !important;
+    box-shadow: 0 0 0 .03rem rgba(194, 91, 125, 0.5) !important;
     color: #fff !important;
     border-radius: 2px;
     padding: 6px;
@@ -52,6 +54,6 @@
         margin-right: 8px;
     }
     .commentContainer {
-        padding: 0 10px !important;
+        padding: 10px !important;
     }
 }

@@ -1,5 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### MyMoviex
+
+``` 
+MyMoviex is a web application helping users to be informed about all movies in the world and enables them
+to create their favorites-lists after they are authenticated.
+```
+<p align="center">
+  <img src="/src/assets/text-mymoviex" width="350" title="screenshot">
+  <img src="/src/assets/text-mymoviex1" width="350" title="screenshot">
+</p>
+Application has been developed with react.js and been supported by a wep API connected to a nosql MongoDB databese. 
+
+
+### Installing 
+
 ## Available Scripts
 
 In the project directory, you can run:

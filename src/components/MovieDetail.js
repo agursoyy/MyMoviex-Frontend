@@ -123,43 +123,50 @@ class movieDetail extends React.Component {
                 </div>
                 <div id="moviedetail-page">
                     <div id="moviedetail" className="container" style={{ backgroundImage: this.state.movie.backdrop_path ? `url(${this.backdropUrl+this.state.movie.backdrop_path})` : ''}}>
-                                <div className="row content">
-                                    <div className="col-md-3 d-none d-md-block imgContainer">
-                                        {img}
+                                <div className="moviedetail-content">
+                                    <div className="moviedetail-movie">
+                                        <div className="row">
+                                            <div className="col-md-4 d-none d-md-block imgContainer">
+                                                {img}
+                                            </div>
+                                            <div className="col-md-8 movie-info p-4">
+                                                    <div className="d-flex justify-content-between">
+                                                        <div className="movie-title">{this.state.movie.title}</div>
+                                                    </div>
+                                                    {this.genresJsx()}
+                                                    <div className="button-groups d-flex">
+                                                        <div className="mr-2"><AddFavorites movie = {this.state.movie}/></div>
+                                                        <div className="mr-2"><YoutubePlay onClick = {this.handleYoutubeButton.bind(this)}/></div>
+                                                        <a className="make-comment" href="#movie-comments">
+                                                            <i className="far fa-comment comment-icon"></i>
+                                                        </a>
+                                                    </div>
+                                                    <hr/>
+
+                                                    <ul className="star-release">
+                                                        <li>
+                                                        <i className="fa fa-star mr-1 star-icon mr-1" aria-hidden="true"></i>
+                                                        {this.state.movie.vote_average}
+                                                        </li>
+                                                        <li>
+                                                            <span className="release-date">{this.state.movie.release_date}</span>
+                                                        </li>
+
+                                                    </ul>
+                                                    <p className="overview">
+                                                    <b>Özet: </b>{this.state.movie.overview}
+                                                    </p>
+                                            </div> 
+                                        </div>
                                     </div>
-                                    <div className="col-md-8 movie-info p-4">
-                                            <div className="d-flex justify-content-between">
-                                                <div className="movie-title">{this.state.movie.title}</div>
-
-                                            </div>
-                                            {this.genresJsx()}
-                                            <div className="button-groups d-flex">
-                                                <div className="mr-2"><AddFavorites movie = {this.state.movie}/></div>
-                                                <div className="mr-2"><YoutubePlay onClick = {this.handleYoutubeButton.bind(this)}/></div>
-                                                <a className="make-comment" href="#movie-comments">
-                                                    <i className="far fa-comment comment-icon"></i>
-                                                </a>
-                                            </div>
-                                            <hr/>
-
-                                            <ul className="star-release">
-                                                <li>
-                                                <i className="fa fa-star mr-1 star-icon mr-1" aria-hidden="true"></i>
-                                                {this.state.movie.vote_average}
-                                                </li>
-                                                <li>
-                                                    <span className="release-date">{this.state.movie.release_date}</span>
-                                                </li>
-
-                                            </ul>
-                                            <p className="overview">
-                                            <b>Özet: </b>{this.state.movie.overview}
-                                            </p>
-                                    </div> 
-                                   <div className="col-12" id="movie-comments">
-                                        <MovieComments/>
-                                   </div>
+                                   
+                                    <div className="row" id="movie-comments">
+                                        <div className="col-12">
+                                            <MovieComments/>
+                                        </div>
+                                    </div>
                                 </div>
+                                
                     </div> 
                     <ModalVideo channel='youtube' isOpen={this.state.youtube} videoId={this.state.trailerID} onClose={() => this.setState({youtube: false})} />
                 </div>
@@ -167,7 +174,6 @@ class movieDetail extends React.Component {
 
         )
               
-        
 
     }
 }

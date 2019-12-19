@@ -36,7 +36,7 @@ class MovieList extends React.Component {
         return values
     }
     getCurrentPage() {
-        if(this.getQueryValues.page === '')
+        if(!this.getQueryValues().page)
             return 1
         else
             return this.getQueryValues().page
