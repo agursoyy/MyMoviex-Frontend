@@ -3,10 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### MyMoviex
 
 ``` 
-MyMoviex is a web application helping users to be informed about all movies in the world and enables them
+MyMoviex is a web application which can help users to be informed about all movies in the world and can enable them
 to create their favorites-lists after they are authenticated.
 
-Application has been developed with react.js and been supported by a remote public web API called TMDB providing movies for developers.
+The application has been developed using React.js and been supported by a remote public web API called TMDB providing movies for developers.
 ```
 ## Visit the Demo
 
