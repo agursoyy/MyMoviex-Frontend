@@ -7,8 +7,8 @@ MyMoviex is a web application helping users to be informed about all movies in t
 to create their favorites-lists after they are authenticated.
 ```
 <p align="center">
-  <img src="/src/assets/text-mymoviex" width="350" title="screenshot">
-  <img src="/src/assets/text-mymoviex1" width="350" title="screenshot">
+  <img src="/src/assets/text-mymoviex.png" width="350" title="screenshot">
+  <img src="/src/assets/text-mymoviex1.png" width="350" title="screenshot">
 </p>
 Application has been developed with react.js and been supported by a wep API connected to a nosql MongoDB databese. 
 
