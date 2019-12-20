@@ -11,7 +11,7 @@ The application has been developed using React.js and been supported by a remote
 ## Visit the Demo
 
 ```
-[MyMoviex] (https://mymoviex.herokuapp.com/vizyondaki-filmler?page=1)
+[MyMoviex](https://mymoviex.herokuapp.com/vizyondaki-filmler?page=1)
 ```
 ``` 
 MyMoviex is a web application helping users to be informed about all movies in the world and enables them
